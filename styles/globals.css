@@ -54,15 +54,15 @@ scrollbar-thumb {
   height: calc(100% + 4px);
 }
 
-.iframe-with-aspect-ratio {
+.phone-aspect-ratio {
   position: relative;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 9 / 19.5;
   max-width: 100%;
   overflow: hidden;
 }
 
 @screen md {
-  .iframe-with-aspect-ratio {
+  .phone-aspect-ratio {
     max-width: 375px;
   }
 }
