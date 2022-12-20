@@ -81,7 +81,7 @@ export default function ClassPage({ class: currentClass }: Props) {
                         <h2 className="text-xl font-bold text-gray-700 mt-4">Images</h2>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
                             {currentClass.images.map((image, index) => (
-                                <img key={index.toString()} src={image} alt={currentClass.name} className="w-full rounded-lg max-h-96 object-cover" />
+                                <img key={index.toString()} src={image} alt={currentClass.name} className="w-full rounded-lg max-h-96 h-full object-cover" />
                             ))}
                         </div>
                     </div>
@@ -89,7 +89,7 @@ export default function ClassPage({ class: currentClass }: Props) {
                 {currentClass.videos.length > 0 && (
                     <div>
                         <h2 className="text-xl font-bold text-gray-700 mt-4">Videos</h2>
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 my-4">
                             {currentClass.videos.map((video, index) => (
                                 <video key={index.toString()} src={video} className="w-full rounded-lg max-h-96 h-full object-cover" controls />
                             ))}
