@@ -2,9 +2,10 @@ import React, { FC } from 'react'
 
 import PageWrapper from '../components/PageWrapper'
 import ContactForm from '../components/ContactForm'
+import { server } from "../config";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHtml5, faCss3Alt, faReact, faNodeJs, faJs, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faHtml5, faCss3Alt, faReact, faJs, faGithub } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
 
 const Skills: React.FC = () => {
@@ -49,14 +50,39 @@ const Skills: React.FC = () => {
   )
 }
 
+function ClassList({ classes }: { classes: Class[] }) {
+  return (
+    <div className="text-center">
+      <h3 className="text-2xl font-bold leading-tight text-gray-300 mb-4">Class List</h3>
+      <ul className="flex flex-wrap flex-col justify-center list-disc content-center text-left">
+        {classes.map((cls, index) => (
+          <li key={index} className="my-2 text-white font-medium">
+            <Link href={`/classes/${cls.url}`}>
+              {cls.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div >
+  )
+}
+
 const iconsUsed = [
   { name: "Font Awesome", url: "https://fontawesome.com/" },
   { name: "icons8", url: "https://icons8.com/" },
   { name: "iconduck", url: "https://iconduck.com/" }
 ]
 
+interface Class {
+  _id: string,
+  name: string,
+  url: string,
+  description: string,
+  images: string[],
+  videos: string[]
+}
 
-const Home: FC = () => {
+export default function Home(props: { classes: Class[]; }) {
 
   return (
     <PageWrapper title="My Portfolio" iconsUsed={iconsUsed}>
@@ -65,6 +91,7 @@ const Home: FC = () => {
         <p className="text-xl font-medium leading-tight text-center text-gray-400 mt-2">I am a high school student with a passion for coding and engineering. Here are some of my skills and achievements:</p>
       </header>
       <Skills />
+      <ClassList classes={props.classes} />
       <section className="py-8">
         <h2 className="text-2xl font-bold leading-tight text-center text-gray-300 mb-4">Projects</h2>
         <ul className="list-none">
@@ -90,8 +117,6 @@ const Home: FC = () => {
           </li>
         </ul>
       </section>
-
-
       <footer className="py-8">
         <h2 className="text-2xl font-bold leading-tight text-center text-gray-300 mb-4">Contact Me</h2>
         <ContactForm />
@@ -100,4 +125,17 @@ const Home: FC = () => {
   )
 }
 
-export default Home
+export async function getServerSideProps(context: any) {
+  let host = context.req.headers.host;
+  let res = await fetch(`${server}${host}/api/classes`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  let allClasses = await res.json();
+  let classes = allClasses.data;
+  return {
+    props: { classes },
+  };
+}

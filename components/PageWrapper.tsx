@@ -13,7 +13,7 @@ const PageWrapper: FC<PageWrapperProps> = ({ children, title, iconsUsed = [] }) 
         <div className="bg-gray-900 min-h-screen flex flex-col">
             <Head>
                 <title>{title}</title>
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/icons/favicon.ico" />
             </Head>
             <nav className="bg-gray-800 py-4 shadow-md">
                 <div className="container mx-auto px-6">

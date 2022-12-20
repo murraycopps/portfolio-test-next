@@ -18,7 +18,7 @@ const AppPage = () => {
                     </p>
                 </div>
                 <div className="flex flex-col sm:flex-row justify-evenly content-center flex-wrap">
-                    <div className="phone-aspect-ratio shrink mt-4 overflow-hidden">
+                    <div className="phone-aspect-ratio mt-4 overflow-hidden">
                         <img
                             src="/images/pacing.png"
                             alt="Pacing Page Sc"
@@ -46,7 +46,7 @@ const AppPage = () => {
                 <h2 className="text-4xl font-bold sm:px-6">Previous Models</h2>
             </div >
             <div className="flex flex-wrap flex-col sm:flex-row justify-between items-start w-full">
-                <div className="px-4 py-6 bg-gray-900 w-full sm:w-1/2">
+                <div className="px-4 py-6 bg-gray-900 w-full sm:w-1/3">
                     <h2 className="text-xl font-bold text-center text-gray-400">React Model</h2>
                     <div className="phone-aspect-ratio mt-6 mx-auto">
                         <iframe
@@ -56,7 +56,7 @@ const AppPage = () => {
                         />
                     </div>
                 </div>
-                <div className="px-4 py-6 bg-gray-900 w-full sm:w-1/2">
+                <div className="px-4 py-6 bg-gray-900 w-full sm:w-1/3">
                     <h2 className=" text-xl font-bold text-center text-gray-400">HTML Model</h2>
                     <div className="phone-aspect-ratio mt-6 mx-auto">
                         <Link href="https://pacing-app.murraycopps.repl.co/" target="_blank">
@@ -67,6 +67,18 @@ const AppPage = () => {
                         Note: This website was built strictly for mobile and may not display correctly in a browser. To view the website correctly, inspect the page and click the phone icon in the top left of the inspect section.
                     </p>
                 </div>
+                <div className="px-4 py-6 bg-gray-900 w-full sm:w-1/3">
+                    <h2 className="text-xl font-bold text-center text-gray-400">Code.org Model</h2>
+                    <div className="phone-aspect-ratio mt-6 mx-auto">
+                        <iframe
+                            src="https://studio.code.org/projects/applab/y2_R9F_xMHW2mIpyDt65PKicie24UmjeFCbL3kfFqa0/embed"
+                            title="Code.org Project"
+                            className="w-full h-full"
+                        />
+                        {/* <iframe width="392" height="620" src="https://studio.code.org/projects/applab/y2_R9F_xMHW2mIpyDt65PKicie24UmjeFCbL3kfFqa0/embed"></iframe> */}
+                    </div>
+                </div>
+
             </div>
 
         </PageWrapper >
