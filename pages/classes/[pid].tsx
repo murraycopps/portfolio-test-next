@@ -60,7 +60,6 @@ type Props = {
 }
 
 export default function ClassPage({ class: currentClass }: Props) {
-    console.log(currentClass.description)
     if (!currentClass) {
         return (
             <div className="bg-red-500 p-4 text-white text-2xl font-bold">
