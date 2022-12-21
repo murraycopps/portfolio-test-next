@@ -82,8 +82,8 @@ interface Class {
   videos: string[]
 }
 
-export default function Home(props: { classes: Class[]; }) {
-
+export default function Home(props: { host: string, classes: Class[]; }) {
+  console.log(server + props.host)
   return (
     <PageWrapper title="My Portfolio" iconsUsed={iconsUsed}>
       <header className="py-8">
@@ -91,7 +91,7 @@ export default function Home(props: { classes: Class[]; }) {
         <p className="text-xl font-medium leading-tight text-center text-gray-400 mt-2">I am a high school student with a passion for coding and engineering. Here are some of my skills and achievements:</p>
       </header>
       <Skills />
-      <ClassList classes={props.classes} />
+      {/* <ClassList classes={props.classes} /> */}
       <section className="py-8">
         <h2 className="text-2xl font-bold leading-tight text-center text-gray-300 mb-4">Projects</h2>
         <ul className="list-none">
@@ -127,15 +127,15 @@ export default function Home(props: { classes: Class[]; }) {
 
 export async function getServerSideProps(context: any) {
   let host = context.req.headers.host;
-  let res = await fetch(`${server}${host}/api/classes`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  let allClasses = await res.json();
-  let classes = allClasses.data;
+  // let res = await fetch(`${server}${host}/api/classes`, {
+  //   method: "GET",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  // });
+  // let allClasses = await res.json();
+  // let classes = allClasses.data;
   return {
-    props: { classes },
+    props: {host, classes: [] },
   };
 }
