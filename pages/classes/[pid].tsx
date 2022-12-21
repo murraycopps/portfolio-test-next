@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Link from 'next/link'
 import React from 'react';
 import PageWrapper from '../../components/PageWrapper'
@@ -63,6 +64,9 @@ export default function ClassPage({ class: currentClass }: Props) {
     if (!currentClass) {
         return (
             <div className="bg-red-500 p-4 text-white text-2xl font-bold">
+                <Head>
+                    <title>Class not Found</title>
+                </Head>
                 <Link href="/" className="text-blue-500 font-bold mx-4">
                     &larr; Back
                 </Link>
