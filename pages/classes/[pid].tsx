@@ -73,7 +73,7 @@ export default function ClassPage({ class: currentClass }: Props) {
     }
     return (
         <PageWrapper title={currentClass.name}>
-            <div className="bg-gray-200 p-4">
+            <div className="bg-gray-200 p-4 rounded-lg">
                 <h1 className="text-2xl font-bold text-gray-700">{currentClass.name}</h1>
                 <TextWithLinks text={currentClass.description} />
                 {currentClass.images.length > 0 && (
