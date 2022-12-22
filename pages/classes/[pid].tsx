@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import Link from 'next/link'
 import React from 'react';
 import PageWrapper from '../../components/PageWrapper'
@@ -84,7 +85,7 @@ export default function ClassPage({ class: currentClass }: Props) {
                         <h2 className="text-xl font-bold text-gray-700 mt-4">Images</h2>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
                             {currentClass.images.map((image, index) => (
-                                <img key={index.toString()} src={image} alt={currentClass.name} className="w-full rounded-lg max-h-96 h-full object-cover" />
+                                <Image key={index.toString()} src={image} alt={currentClass.name} className="w-full rounded-lg max-h-96 h-full object-cover" />
                             ))}
                         </div>
                     </div>

@@ -7,6 +7,7 @@ import { server } from "../config";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHtml5, faCss3Alt, faReact, faJs, faGithub } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Skills: React.FC = () => {
   return (
@@ -38,11 +39,11 @@ const Skills: React.FC = () => {
           <span className="hidden font-semibold text-xs text-center mt-2 absolute top-full left-0 w-full px-2 py-1 bg-white text-gray-800 rounded-b-lg z-10">GitHub</span>
         </li>
         <li className="mx-2 my-2 w-16 h-16 p-3 rounded-full text-white font-medium bg-blue-500 skill relative">
-          <img src="/icons/typescript-icon.svg" className="w-10 h-10" />
+          <Image src="/icons/typescript-icon.svg" className="w-10 h-10" alt="tsIcon" />
           <span className="hidden font-semibold text-2xs text-center mt-2 absolute top-full left-0 w-full px-1 py-1 bg-blue-500 text-white rounded-b-lg z-10">TypeScript</span>
         </li>
         <li className="mx-2 my-2 w-16 h-16 rounded-full text-white font-medium bg-gray-100 skill relative border-2 border-black">
-          <img src="/icons/next-js.svg" className="w-16 h-16 object-fit-cover left-0 next-icon" />
+          <Image src="/icons/next-js.svg" className="w-16 h-16 object-fit-cover left-0 next-icon" alt="tsIcon" />
           <span className="hidden font-semibold text-xs text-center mt-2 absolute top-full left-0 w-full px-2 py-1 bg-white text-gray-800 rounded-b-lg z-10">Next.js</span>
         </li>
       </ul>
@@ -126,7 +127,7 @@ export default function Home(props: { host: string, classes: Class[]; }) {
 
 export async function getServerSideProps(context: any) {
   let host = context.req.headers.host;
-  try{
+  try {
     let res = await fetch(`${server}${host}/api/classes`, {
       method: "GET",
       headers: {
@@ -136,13 +137,13 @@ export async function getServerSideProps(context: any) {
     let allClasses = await res.json();
     let classes = allClasses.data;
     return {
-      props: {host, classes },
+      props: { host, classes },
     };
   }
-  catch(err){
+  catch (err) {
     console.log(err)
     return {
-      props: {host, classes: [] },
+      props: { host, classes: [] },
     };
   }
 }

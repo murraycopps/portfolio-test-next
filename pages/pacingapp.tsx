@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import PageWrapper from "../components/PageWrapper";
 
@@ -19,21 +20,21 @@ const AppPage = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row justify-evenly content-center flex-wrap">
                     <div className="phone-aspect-ratio mt-4 overflow-hidden">
-                        <img
+                        <Image
                             src="/images/pacing.png"
                             alt="Pacing Page Sc"
                             className="mx-auto h-full object-cover"
                         />
                     </div>
                     <div className="phone-aspect-ratio mt-4 overflow-hidden">
-                        <img
+                        <Image
                             src="/images/unusual.png"
                             alt="Unusual Page Sc"
                             className="mx-auto h-full object-cover"
                         />
                     </div>
                     <div className="phone-aspect-ratio mt-4 overflow-hidden">
-                        <img
+                        <Image
                             src="images/timer.png"
                             alt="Timer Page Sc"
                             className="mx-auto h-full object-cover"
@@ -60,7 +61,7 @@ const AppPage = () => {
                     <h2 className=" text-xl font-bold text-center text-gray-400">HTML Model</h2>
                     <div className="phone-aspect-ratio mt-6 mx-auto">
                         <Link href="https://pacing-app.murraycopps.repl.co/" target="_blank">
-                            <img src="/images/html-app.PNG" alt="HTML Model" className="w-full h-full object-cover" />
+                            <Image src="/images/html-app.PNG" alt="HTML Model" className="w-full h-full object-cover" />
                         </Link>
                     </div>
                     <p className="text-sm mt-4 font-medium leading-5 w-full text-gray-500">
@@ -75,7 +76,6 @@ const AppPage = () => {
                             title="Code.org Project"
                             className="w-full h-full"
                         />
-                        {/* <iframe width="392" height="620" src="https://studio.code.org/projects/applab/y2_R9F_xMHW2mIpyDt65PKicie24UmjeFCbL3kfFqa0/embed"></iframe> */}
                     </div>
                 </div>
 
