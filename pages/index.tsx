@@ -7,7 +7,9 @@ import { server } from "../config";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHtml5, faCss3Alt, faReact, faJs, faGithub } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
-import Image from 'next/image';
+import NodeCache from 'node-cache';
+
+const cache = new NodeCache({ stdTTL: 100, checkperiod: 120 });
 
 const Skills: React.FC = () => {
   return (
@@ -39,11 +41,11 @@ const Skills: React.FC = () => {
           <span className="hidden font-semibold text-xs text-center mt-2 absolute top-full left-0 w-full px-2 py-1 bg-white text-gray-800 rounded-b-lg z-10">GitHub</span>
         </li>
         <li className="mx-2 my-2 w-16 h-16 p-3 rounded-full text-white font-medium bg-blue-500 skill relative">
-          <Image src="/icons/typescript-icon.svg" className="w-10 h-10" alt="tsIcon" />
+          <img src="/icons/typescript-icon.svg" className="w-10 h-10" alt="tsIcon" />
           <span className="hidden font-semibold text-2xs text-center mt-2 absolute top-full left-0 w-full px-1 py-1 bg-blue-500 text-white rounded-b-lg z-10">TypeScript</span>
         </li>
         <li className="mx-2 my-2 w-16 h-16 rounded-full text-white font-medium bg-gray-100 skill relative border-2 border-black">
-          <Image src="/icons/next-js.svg" className="w-16 h-16 object-fit-cover left-0 next-icon" alt="tsIcon" />
+          <img src="/icons/next-js.svg" className="w-16 h-16 object-fit-cover left-0 next-icon" alt="tsIcon"/>
           <span className="hidden font-semibold text-xs text-center mt-2 absolute top-full left-0 w-full px-2 py-1 bg-white text-gray-800 rounded-b-lg z-10">Next.js</span>
         </li>
       </ul>
@@ -52,11 +54,17 @@ const Skills: React.FC = () => {
 }
 
 function ClassList({ classes }: { classes: Class[] }) {
+  // Save the props.classes object in cache
+  cache.set('classes', classes);
+
+  // Retrieve the props.classes object from cache
+  const classList = cache.get('classes') as Class[];
+  
   return (
     <div className="text-center">
       <h3 className="text-2xl font-bold leading-tight text-gray-300 mb-4">Class List</h3>
       <ul className="flex flex-wrap flex-col justify-center list-disc content-center text-left">
-        {classes.map((cls, index) => (
+        {classList.map((cls, index) => (
           <li key={index} className="my-2 text-white font-medium">
             <Link href={`/classes/${cls.url}`}>
               {cls.name}
