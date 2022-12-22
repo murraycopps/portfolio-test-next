@@ -92,7 +92,7 @@ export default function Home(props: { host: string, classes: Class[]; }) {
         <p className="text-xl font-medium leading-tight text-center text-gray-400 mt-2">I am a high school student with a passion for coding and engineering. Here are some of my skills and achievements:</p>
       </header>
       <Skills />
-      {/* <ClassList classes={props.classes} /> */}
+      <ClassList classes={props.classes} />
       <section className="py-8">
         <h2 className="text-2xl font-bold leading-tight text-center text-gray-300 mb-4">Projects</h2>
         <ul className="list-none">
