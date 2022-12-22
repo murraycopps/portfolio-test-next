@@ -83,8 +83,6 @@ interface Class {
 }
 
 export default function Home(props: { host: string, classes: Class[]; }) {
-  console.log(server + props.host)
-  console.log(props.classes)
   return (
     <PageWrapper title="My Portfolio" iconsUsed={iconsUsed}>
       <header className="py-8">
