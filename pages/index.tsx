@@ -128,15 +128,23 @@ export default function Home(props: { host: string, classes: Class[]; }) {
 
 export async function getServerSideProps(context: any) {
   let host = context.req.headers.host;
-  // let res = await fetch(`${server}${host}/api/classes`, {
-  //   method: "GET",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  // });
-  // let allClasses = await res.json();
-  // let classes = allClasses.data;
-  return {
-    props: {host, classes: [] },
-  };
+  try{
+    let res = await fetch(`${server}${host}/api/classes`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    let allClasses = await res.json();
+    let classes = allClasses.data;
+    return {
+      props: {host, classes },
+    };
+  }
+  catch(err){
+    console.log(err)
+    return {
+      props: {host, classes: [] },
+    };
+  }
 }
