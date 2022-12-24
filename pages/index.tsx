@@ -45,7 +45,7 @@ const Skills: React.FC = () => {
           <span className="hidden font-semibold text-2xs text-center mt-2 absolute top-full left-0 w-full px-1 py-1 bg-blue-500 text-white rounded-b-lg z-10">TypeScript</span>
         </li>
         <li className="mx-2 my-2 w-16 h-16 rounded-full text-white font-medium bg-gray-100 skill relative border-2 border-black">
-          <img src="/icons/next-js.svg" className="w-16 h-16 object-fit-cover left-0 next-icon" alt="tsIcon"/>
+          <img src="/icons/next-js.svg" className="w-16 h-16 object-fit-cover left-0 next-icon" alt="tsIcon" />
           <span className="hidden font-semibold text-xs text-center mt-2 absolute top-full left-0 w-full px-2 py-1 bg-white text-gray-800 rounded-b-lg z-10">Next.js</span>
         </li>
       </ul>
@@ -59,7 +59,7 @@ function ClassList({ classes }: { classes: Class[] }) {
 
   // Retrieve the props.classes object from cache
   const classList = cache.get('classes') as Class[];
-  
+
   return (
     <div className="text-center">
       <h3 className="text-2xl font-bold leading-tight text-gray-300 mb-4">Class List</h3>
@@ -93,12 +93,14 @@ interface Class {
 
 export default function Home(props: { host: string, classes: Class[]; }) {
   return (
-    <PageWrapper title="My Portfolio" iconsUsed={iconsUsed}>
+    <PageWrapper title="Copps Portfolio" iconsUsed={iconsUsed}>
       <header className="py-8">
         <h1 className="text-4xl font-bold leading-tight text-center text-gray-300">My Coding and Engineering Portfolio</h1>
         <p className="text-xl font-medium leading-tight text-center text-gray-400 mt-2">I am a high school student with a passion for coding and engineering. Here are some of my skills and achievements:</p>
       </header>
       <Skills />
+
+
       <ClassList classes={props.classes} />
       <section className="py-8">
         <h2 className="text-2xl font-bold leading-tight text-center text-gray-300 mb-4">Projects</h2>
