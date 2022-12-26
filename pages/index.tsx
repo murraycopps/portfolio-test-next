@@ -32,6 +32,10 @@ const Skills: React.FC = () => {
           <img src="/icons/typescript-icon.svg" className="w-10 h-10" alt="tsIcon" />
           <span className="hidden font-semibold text-2xs text-center mt-2 absolute top-full left-0 w-full px-1 py-1 bg-blue-500 text-white rounded-b-lg z-10">TypeScript</span>
         </li>
+        <li className="mx-2 my-2 w-16 h-16 rounded-full text-white font-medium bg-gray-800 skill relative">
+          <FontAwesomeIcon icon={faGithub} className="text-white font-large w-16 h-16" />
+          <span className="hidden font-semibold text-xs text-center mt-2 absolute top-full left-0 w-full px-2 py-1 bg-white text-gray-800 rounded-b-lg z-10">GitHub</span>
+        </li>
         <li className="mx-2 my-2 w-16 h-16 p-1 rounded-full text-white font-medium bg-green-500 skill relative">
           <FontAwesomeIcon icon={faReact} className="text-white font-large w-14 h-14" />
           <span className="hidden font-semibold text-xs text-center mt-2 absolute top-full left-0 w-full px-2 py-1 bg-green-500 text-white rounded-b-lg z-10">React</span>
@@ -43,10 +47,6 @@ const Skills: React.FC = () => {
         <li className="mx-2 my-2 w-16 h-16 rounded-full text-white font-medium bg-gray-100 skill relative border-2 border-black">
           <img src="/icons/next-js.svg" className="w-16 h-16 object-fit-cover left-0 next-icon" alt="tsIcon" />
           <span className="hidden font-semibold text-xs text-center mt-2 absolute top-full left-0 w-full px-2 py-1 bg-white text-gray-800 rounded-b-lg z-10">Next.js</span>
-        </li>
-        <li className="mx-2 my-2 w-16 h-16 rounded-full text-white font-medium bg-gray-800 skill relative">
-          <FontAwesomeIcon icon={faGithub} className="text-white font-large w-16 h-16" />
-          <span className="hidden font-semibold text-xs text-center mt-2 absolute top-full left-0 w-full px-2 py-1 bg-white text-gray-800 rounded-b-lg z-10">GitHub</span>
         </li>
       </ul>
     </section>
