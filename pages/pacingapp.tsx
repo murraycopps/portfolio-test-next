@@ -18,7 +18,7 @@ const AppPage = () => {
                     </p>
                     <br />
                     <p className="text-lg font-medium w-full text-center text-gray-400 indent-8">
-                        I made a desktop friendly website using next.js that you can demo
+                        I made a desktop and mobile friendly website using next.js that you can demo
                         <Link href="https://pacing-website-next.vercel.app/" target="_blank" className="text-blue-500 font-bold"> here.</Link>
                     </p>
                 </div>
