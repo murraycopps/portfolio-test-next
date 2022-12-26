@@ -30,11 +30,11 @@ const Skills: React.FC = () => {
         </li>
         <li className="mx-2 my-2 w-16 h-16 p-1 rounded-full text-white font-medium bg-orange-500 skill relative">
           <FontAwesomeIcon icon={faReact} className="text-white font-large w-14 h-14" />
+          <span className="hidden font-semibold text-xs text-center mt-2 absolute top-full left-0 w-full px-2 py-1 bg-orange-500 text-white rounded-b-lg z-10">React Native</span>
+        </li>
         <li className="mx-2 my-2 w-16 h-16 px-3 py-3 rounded-full text-white font-medium bg-yellow-500 skill relative">
           <FontAwesomeIcon icon={faJs} className="text-white font-large w-10 h-10" />
           <span className="hidden font-semibold text-2xs text-center mt-2 absolute top-full left-0 w-full px-1 py-1 bg-yellow-500 text-white rounded-b-lg z-10">JavaScript</span>
-        </li>
-          <span className="hidden font-semibold text-xs text-center mt-2 absolute top-full left-0 w-full px-2 py-1 bg-orange-500 text-white rounded-b-lg z-10">React Native</span>
         </li>
         <li className="mx-2 my-2 w-16 h-16 rounded-full text-white font-medium bg-gray-800 skill relative">
           <FontAwesomeIcon icon={faGithub} className="text-white font-large w-16 h-16" />
