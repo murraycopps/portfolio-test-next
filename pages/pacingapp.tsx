@@ -16,25 +16,30 @@ const AppPage = () => {
                     <p className="text-lg font-medium leading-tight text-gray-400 indent-8">
                         In addition, our app includes a page that allows you to add together times for relay races, making it easy to track and compare team performances. And for coaches and meet organizers, we have a feature that makes it easy to score cross country and track meets. With our settings page, you can store your preferences in local storage, making it easy to customize and use our app to fit your needs.
                     </p>
+                    <br />
+                    <p className="text-lg font-medium leading-tight text-gray-400 indent-8">
+                        I made a desktop friendly website using next.js that you can demo
+                        <Link href="https://pacing-website-next.vercel.app/" target="_blank" className="text-blue-500 font-bold">here.</Link>
+                    </p>
                 </div>
                 <div className="flex flex-col sm:flex-row justify-evenly content-center flex-wrap">
                     <div className="phone-aspect-ratio mt-4 overflow-hidden">
                         <img
-                            src="/images/pacing.png"
+                            src="/images/pacing.PNG"
                             alt="Pacing Page Sc"
                             className="mx-auto h-full object-cover"
                         />
                     </div>
                     <div className="phone-aspect-ratio mt-4 overflow-hidden">
                         <img
-                            src="/images/unusual.png"
+                            src="/images/unusual.PNG"
                             alt="Unusual Page Sc"
                             className="mx-auto h-full object-cover"
                         />
                     </div>
                     <div className="phone-aspect-ratio mt-4 overflow-hidden">
                         <img
-                            src="images/timer.png"
+                            src="images/timer.PNG"
                             alt="Timer Page Sc"
                             className="mx-auto h-full object-cover"
                         />
@@ -77,7 +82,6 @@ const AppPage = () => {
                         />
                     </div>
                 </div>
-
             </div>
 
         </PageWrapper >
