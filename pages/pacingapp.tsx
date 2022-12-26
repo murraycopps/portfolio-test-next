@@ -17,7 +17,7 @@ const AppPage = () => {
                         In addition, our app includes a page that allows you to add together times for relay races, making it easy to track and compare team performances. And for coaches and meet organizers, we have a feature that makes it easy to score cross country and track meets. With our settings page, you can store your preferences in local storage, making it easy to customize and use our app to fit your needs.
                     </p>
                     <br />
-                    <p className="text-lg font-medium leading-tight text-gray-400 indent-8">
+                    <p className="text-lg font-medium w-full text-center text-gray-400 indent-8">
                         I made a desktop friendly website using next.js that you can demo
                         <Link href="https://pacing-website-next.vercel.app/" target="_blank" className="text-blue-500 font-bold">here.</Link>
                     </p>
