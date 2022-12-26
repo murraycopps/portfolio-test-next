@@ -125,6 +125,11 @@ export default function Home(props: { host: string, classes: Class[]; }) {
             <p className="text-sm font-medium leading-tight text-gray-400 mt-2 mb-4">A page featuring my Balsa Crane engineering project that tripled the school record.</p>
             <Link href="/crane" className="inline-block py-2 px-4 rounded-full text-white font-medium bg-blue-500">View Demo</Link>
           </li>
+          <li className="mb-4">
+            <h3 className="text-xl font-bold leading-tight text-gray-300">Training Plan Generator</h3>
+            <p className="text-sm font-medium leading-tight text-gray-400 mt-2 mb-4">Generate personalized training plans using OpenAI's GPT-3 API.</p>
+            <Link href="https://training-plan-next.vercel.app/" target="_blank" className="inline-block py-2 px-4 rounded-full text-white font-medium bg-blue-500">View Demo</Link>
+          </li>
         </ul>
       </section>
       <footer className="py-8">
