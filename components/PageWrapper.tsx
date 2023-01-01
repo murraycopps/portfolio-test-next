@@ -6,11 +6,12 @@ interface PageWrapperProps {
     children: React.ReactNode
     title: string,
     iconsUsed?: { name: string, url: string }[]
+    snap?: boolean
 }
 
-const PageWrapper: FC<PageWrapperProps> = ({ children, title, iconsUsed = [] }) => {
+const PageWrapper: FC<PageWrapperProps> = ({ children, title, iconsUsed = [], snap = false }) => {
     return (
-        <div className="bg-gray-900 min-h-screen flex flex-col">
+        <div className='bg-gray-900 min-h-screen flex flex-col'>
             <Head>
                 <title>{title}</title>
                 {/* <link rel="icon" href="/icons/favicon.ico" /> */}
@@ -19,7 +20,7 @@ const PageWrapper: FC<PageWrapperProps> = ({ children, title, iconsUsed = [] }) 
                 <link rel="icon" type="image/png" sizes="16x16" href="/faviconb/favicon-16x16.png" />
                 <link rel="manifest" href="faviconb/site.webmanifest" />
             </Head>
-            <nav className="bg-gray-800 py-4 shadow-md">
+            <nav className="bg-gray-800 py-4 shadow-md snap-start">
                 <div className="container mx-auto px-6">
                     <div className="flex items-center justify-between">
                         <h1 className="text-lg font-bold text-white">My Site</h1>
@@ -37,10 +38,10 @@ const PageWrapper: FC<PageWrapperProps> = ({ children, title, iconsUsed = [] }) 
                     </div>
                 </div>
             </nav>
-            <main className="container mx-auto px-6 py-12 overflow-auto grow">
+            <main className='container mx-auto px-6 py-12 grow'>
                 {children}
             </main>
-            <footer className="bg-gray-800 py-4 shadow-md text-center text-white">
+            <footer className="bg-gray-800 py-4 shadow-md text-center text-white snap-start">
                 <p>Made with <Link href="https://nextjs.org/">Next.js</Link>{iconsUsed.length > 0 && " | Icons by"} {iconsUsed.map((icon, index) => {
                     return (<span key={index}>{index > 0 && ","} {index === iconsUsed.length - 1 && "and "}<Link href={icon ? icon.url : ""}>{icon ? icon.name : ""}</Link></span>)
                 })}

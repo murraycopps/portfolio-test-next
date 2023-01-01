@@ -6,6 +6,9 @@ html,
 body {
   overflow-x: hidden;
   background-color: rgb(31 41 55 / 1);
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  height: 100vh;
 }
 
 /* For webkit browsers */
@@ -34,11 +37,6 @@ scrollbar-thumb {
 .skill:hover span {
   display: block;
 }
-
-/* .skill:hover{
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-} */
 
 * {
   box-sizing: border-box;
