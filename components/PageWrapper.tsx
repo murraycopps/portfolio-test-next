@@ -14,7 +14,6 @@ const PageWrapper: FC<PageWrapperProps> = ({ children, title, iconsUsed = [], sn
         <div className='bg-gray-900 min-h-screen flex flex-col'>
             <Head>
                 <title>{title}</title>
-                {/* <link rel="icon" href="/icons/favicon.ico" /> */}
                 <link rel="apple-touch-icon" sizes="180x180" href="/faviconb/apple-touch-icon.png" />
                 <link rel="icon" type="image/png" sizes="32x32" href="/faviconb/favicon-32x32.png" />
                 <link rel="icon" type="image/png" sizes="16x16" href="/faviconb/favicon-16x16.png" />
