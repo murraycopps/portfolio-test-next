@@ -35,13 +35,22 @@ scrollbar-thumb {
 }
 
 .skill:hover span {
-  display: block;
+  clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 100%, 0 0);
+  /* clip-path: circle(100% at 50% 0); */
+  /* clip-path: ellipse(70% 120% at 50% 0%); */
+}
+
+.skill span {
+  clip-path: polygon(50% 0%, 100% 0, 100% 0, 0 0, 0 0);
+  /* clip-path: ellipse(30% 0% at 49% 0%); */
+  /* clip-path: circle(0% at 50% 0); */
+  overflow: hidden;
+  transition: clip-path 150ms;
 }
 
 * {
   box-sizing: border-box;
 }
-
 
 .next-icon {
   position: absolute;

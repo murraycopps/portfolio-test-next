@@ -85,7 +85,7 @@ export default function ClassPage({ class: currentClass }: Props) {
     }
     return (
         <PageWrapper title={thisClass.name}>
-            <div className="bg-gray-200 p-4 rounded-lg">
+            <div className="bg-gray-200 p-4 rounded-lg snap-start">
                 <h1 className="text-2xl font-bold text-gray-700">{thisClass.name}</h1>
                 <TextWithLinks text={thisClass.description} />
                 {thisClass.images.length > 0 && (
@@ -93,7 +93,7 @@ export default function ClassPage({ class: currentClass }: Props) {
                         <h2 className="text-xl font-bold text-gray-700 mt-4">Images</h2>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
                             {thisClass.images.map((image, index) => (
-                                <img key={index.toString()} src={image} alt={thisClass.name} className="w-full rounded-lg max-h-96 h-full object-cover" />
+                                <img key={index.toString()} src={image} alt={thisClass.name} className="w-full rounded-lg max-h-96 h-full object-cover snap-start" />
                             ))}
                         </div>
                     </div>
@@ -103,7 +103,7 @@ export default function ClassPage({ class: currentClass }: Props) {
                         <h2 className="text-xl font-bold text-gray-700 mt-4">Videos</h2>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 my-4">
                             {thisClass.videos.map((video, index) => (
-                                <video key={index.toString()} src={video} className="w-full rounded-lg max-h-96 h-full object-cover" controls />
+                                <video key={index.toString()} src={video} className="w-full rounded-lg max-h-96 h-full object-cover snap-start" controls />
                             ))}
                         </div>
                     </div>
