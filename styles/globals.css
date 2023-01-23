@@ -46,6 +46,7 @@ scrollbar-thumb {
   /* clip-path: circle(0% at 50% 0); */
   overflow: hidden;
   transition: clip-path 150ms;
+  display: none;
 }
 
 * {
@@ -72,4 +73,60 @@ scrollbar-thumb {
   .phone-aspect-ratio {
     max-width: 375px;
   }
+}
+
+.circle {
+  animation: rotate 15s infinite linear;
+  transition: all 0.3s;
+}
+
+.circle:hover {
+  animation-play-state: paused;
+}
+
+.circle:hover > li > div {
+  animation-play-state: paused;
+}
+.circle:hover > div {
+  animation-play-state: paused;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.rotate-center {
+  transform-origin: center;
+  animation: rotate-center 15s infinite linear;
+}
+
+@keyframes rotate-center {
+  to {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(360deg);
+  }
+}
+
+.full-circle-clip {
+  clip-path: circle(100% at 50% 50%);
+  transition: clip-path 0.2s, color 0.2s, background-color 0.2s;
+}
+
+.empty-circle-clip {
+  clip-path: circle(0% at 50% 50%);
+  transition: clip-path 0.2s;
+}
+
+.scale-on-hover > div {
+  transition: scale 0.15s;
+}
+
+.scale-on-hover:hover > div {
+  scale: 1.3;
 }
