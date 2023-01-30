@@ -13,11 +13,8 @@ import {
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
-import NodeCache from "node-cache";
 
-const cache = new NodeCache({ stdTTL: 100, checkperiod: 120 });
-
-const Skills: FC = () => {
+function Skills() {
   const containerRef = useRef<HTMLUListElement>(null);
 
   const [radius, setRadius] = useState(120);
@@ -25,7 +22,6 @@ const Skills: FC = () => {
   const [classList, setClassList] = useState("");
   const [visible, setVisible] = useState(false);
   const [content, setContent] = useState("Next.js");
-
   useEffect(() => {
     if (!containerRef.current) return;
 
@@ -50,7 +46,7 @@ const Skills: FC = () => {
       </h2>
       <ul
         ref={containerRef}
-        className="flex flex-wrap justify-center relative hover:h-96 hover:w-96 h-80 w-80 items-center circle rounded-full my-8 hover:my-0"
+        className="flex flex-wrap justify-center relative hover:h-96 a hover:w-96 h-80 w-80 items-center circle rounded-full my-8 hover:my-0"
         onMouseEnter={() => setRadius(150)}
         onMouseLeave={() => setRadius(120)}
       >
@@ -217,11 +213,6 @@ const Skills: FC = () => {
 };
 
 function ClassList({ classes }: { classes: Class[] }) {
-  // Save the props.classes object in cache
-  cache.set("classes", classes);
-
-  // Retrieve the props.classes object from cache
-  const classList = cache.get("classes") as Class[];
 
   return (
     <div className="text-center mb-16 py-16 snap-start">
@@ -229,7 +220,7 @@ function ClassList({ classes }: { classes: Class[] }) {
         Class List
       </h3>
       <ul className="flex flex-wrap flex-col justify-center list-disc content-center text-left">
-        {classList.map((cls, index) => (
+        {classes.map((cls, index) => (
           <li key={index} className="my-2 text-white font-medium">
             <Link href={`/classes/${cls.url}`}>{cls.name}</Link>
           </li>

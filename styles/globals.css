@@ -76,7 +76,7 @@ scrollbar-thumb {
 }
 
 .circle {
-  animation: rotate 15s infinite linear;
+  animation: rotate 60s infinite linear;
   transition: all 0.3s;
 }
 
@@ -101,7 +101,7 @@ scrollbar-thumb {
 }
 .rotate-center {
   transform-origin: center;
-  animation: rotate-center 15s infinite linear;
+  animation: rotate-center 60s infinite linear;
 }
 
 @keyframes rotate-center {

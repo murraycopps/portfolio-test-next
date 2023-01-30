@@ -1,7 +1,11 @@
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import PageWrapper from "../components/PageWrapper";
 
 const AppPage = () => {
+    const router = useRouter();
     return (
         <PageWrapper title="Pacing App" >
             <div className="px-4 py-6 bg-gray-800 text-white">
@@ -83,7 +87,14 @@ const AppPage = () => {
                     </div>
                 </div>
             </div>
-
+            <button
+        className="fixed bottom-4 right-4 bg-white rounded-full p-4"
+        onClick={() => {
+          router.back();
+        }}
+      >
+        <FontAwesomeIcon icon={faArrowLeft} className="w-6 h-6" />
+      </button>
         </PageWrapper >
     );
 }
