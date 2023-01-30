@@ -8,10 +8,10 @@ const BalsaCrane: React.FC = () => {
   const router = useRouter();
   return (
     <PageWrapper title="Balsa Crane">
-      <h1 className="text-3xl font-bold leading-tight text-center text-gray-300 mt-10">
+      <h1 className="mt-10 text-3xl font-bold leading-tight text-center text-gray-300">
         Balsa Crane Engineering Project
       </h1>
-      <p className="text-lg font-medium leading-tight text-gray-400 mt-8">
+      <p className="mt-8 text-lg font-medium leading-tight text-gray-400">
         Our Balsa Crane engineering project achieved an impressive feat by
         lifting 3600 grams, breaking the previous school record of 1200 grams.
         This was made possible through our innovative design approach, which
@@ -22,38 +22,38 @@ const BalsaCrane: React.FC = () => {
         increase the torque of the small DC motor and allow it to handle the
         load more effectively
       </p>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-6">
+      <div className="grid grid-cols-1 gap-4 mt-6 lg:grid-cols-2">
         <img
           src="/images/crane-front.jpeg"
           alt="Balsa crane in action"
-          className="w-full h-64 sm:h-96 object-cover rounded-lg"
+          className="object-cover w-full h-64 rounded-lg sm:h-96"
         />
         <img
           src="/images/crane-side.jpeg"
           alt="Balsa crane design"
-          className="w-full h-64 sm:h-96 object-cover rounded-lg"
+          className="object-cover w-full h-64 rounded-lg sm:h-96"
         />
       </div>
-      <div className="grid grid-cols-1 grid-rows-2 lg:grid-rows-1 lg:grid-cols-2 gap-4 mt-4">
+      <div className="grid grid-cols-1 grid-rows-2 gap-4 mt-4 lg:grid-rows-1 lg:grid-cols-2">
         <Link href="/files/crane-drawing.pdf" target="_blank">
           <img
             src="/images/crane-drawing-image.png"
             alt="Balsa crane in action"
-            className=" w-full lg:w-auto object-cover rounded-lg mx-auto"
+            className="object-cover w-full mx-auto rounded-lg  lg:w-auto"
           />
         </Link>
-        <video controls className="w-full h-full object-cover rounded-lg">
+        <video controls className="object-cover w-full h-full rounded-lg">
           <source src="/files/crane-video.mp4" type="video/mp4" />
         </video>
       </div>
-      <button
-        className="fixed bottom-4 right-4 bg-white rounded-full p-4"
+      {/* <button
+        className="fixed p-4 bg-white rounded-full bottom-4 right-4"
         onClick={() => {
           router.back();
         }}
       >
         <FontAwesomeIcon icon={faArrowLeft} className="w-6 h-6" />
-      </button>
+      </button> */}
     </PageWrapper>
   );
 };

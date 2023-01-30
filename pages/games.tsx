@@ -16,26 +16,26 @@ export default function Games({ games }: { games: Game[] }) {
   
   return (
     <PageWrapper title="Games">
-      <div className="container mx-auto py-16 px-6 snap-start">
-        <h1 className="text-3xl font-bold leading-tight text-gray-100 mb-4">
+      <div className="container px-6 py-16 mx-auto snap-start">
+        <h1 className="mb-4 text-3xl font-bold leading-tight text-gray-100">
           My Games
         </h1>
-        <p className="text-lg font-medium leading-tight text-gray-400 mb-8">
+        <p className="mb-8 text-lg font-medium leading-tight text-gray-400">
           A variety of html css and js games created using JavaScript classes.
         </p>
         <ul className="list-none">
           {games.map((game) => (
-            <li key={game.url} className="mb-4 pt-4 snap-start">
+            <li key={game.url} className="pt-4 mb-4 snap-start">
               <h3 className="text-xl font-bold leading-tight text-gray-100">
                 {game.name}
               </h3>
-              <p className="text-sm font-medium leading-tight text-gray-400 mt-2 mb-4">
+              <p className="mt-2 mb-4 text-sm font-medium leading-tight text-gray-400">
                 {game.description}
               </p>
               <Link
                 href={game.url}
                 target="_blank"
-                className="inline-block py-2 px-4 rounded-full text-white font-medium bg-blue-500 hover:bg-blue-600"
+                className="inline-block px-4 py-2 font-medium text-white bg-blue-500 rounded-full hover:bg-blue-600"
               >
                 View Game
               </Link>
@@ -43,14 +43,14 @@ export default function Games({ games }: { games: Game[] }) {
           ))}
         </ul>
       </div>
-      <button
-        className="fixed bottom-4 right-4 bg-white rounded-full p-4"
+      {/* <button
+        className="fixed p-4 bg-white rounded-full bottom-4 right-4"
         onClick={() => {
           router.back();
         }}
       >
         <FontAwesomeIcon icon={faArrowLeft} className="w-6 h-6" />
-      </button>
+      </button> */}
     </PageWrapper>
   );
 }

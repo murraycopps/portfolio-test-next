@@ -35,14 +35,14 @@ const About = () => {
         Thank you for visiting my portfolio. I hope you find it interesting and
         informative, and I look forward to hearing from you.
       </p>
-      <button
+      {/* <button
         className="fixed bottom-18 right-4 bg-white rounded-full p-4"
         onClick={() => {
           router.back();
         }}
       >
         <FontAwesomeIcon icon={faArrowLeft} className="w-6 h-6" />
-      </button>
+      </button> */}
     </PageWrapper>
   )
 }
