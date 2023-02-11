@@ -1,20 +1,25 @@
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { Class } from "../../scripts/types";
 
 const ClassCard = ({ cls }: { cls: Class }) => {
-  const color = randomColor();
+  const [color, setColor] = useState<Color>();
+
+  useEffect(() =>{
+    setColor(randomColor())
+  })
 
   return (
     <Link
       href={`/classes/${cls.url}`}
-      className={`${color.bg} relative z-0 rounded-lg overflow-hidden snap-start`}
+      className={`${color?.bg} relative z-0 rounded-lg overflow-hidden snap-start`}
     >
       {cls.thumbnail && (
         <img
           src={cls.thumbnail}
           alt=""
           className={`object-cover w-full h-full -z-10 absolute ${
-            (cls.thumbnail && color.opacity) || "opacity-25"
+            (cls.thumbnail && color?.opacity) || "opacity-25"
           }`}
         />
       )}
@@ -50,3 +55,8 @@ const colors = [
 ];
 
 const randomColor = () => colors[Math.floor(Math.random() * colors.length)];
+
+type Color = {
+    bg: string;
+    opacity?: string;
+}

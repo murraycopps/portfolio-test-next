@@ -8,8 +8,8 @@ export default function ProjectList() {
         Projects
       </h2>
       <ul className="list-none">
-        {projects.map((project) => (
-          <ProjectCard project={project} />
+        {projects.map((project, i) => (
+          <ProjectCard project={project} key={i} />
         ))}
       </ul>
     </section>
