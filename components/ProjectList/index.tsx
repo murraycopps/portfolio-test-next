@@ -7,7 +7,7 @@ export default function ProjectList() {
       <h2 className="mb-4 text-2xl font-bold leading-tight text-center text-gray-300">
         Projects
       </h2>
-      <ul className="list-none">
+      <ul className="list-none grid lg:grid-cols-2 gap-4">
         {projects.map((project, i) => (
           <ProjectCard project={project} key={i} />
         ))}
