@@ -34,23 +34,23 @@ export default ClassCard;
 
 const colors = [
   {
-    bg: "bg-blue-500",
+    bg: "bg-blue-500 hover:bg-blue-600",
   },
   {
-    bg: "bg-purple-600",
+    bg: "bg-purple-600 hover:bg-purple-700",
   },
   {
-    bg: "bg-green-600",
+    bg: "bg-green-600 hover:bg-green-700",
   },
   {
-    bg: "bg-orange-600",
+    bg: "bg-orange-600 hover:bg-orange-700",
   },
   {
-    bg: "bg-yellow-600",
+    bg: "bg-yellow-600 hover:bg-yellow-700",
     opacity: "opacity-15",
   },
   {
-    bg: "bg-red-600",
+    bg: "bg-red-600 hover:bg-red-700",
   },
 ];
 

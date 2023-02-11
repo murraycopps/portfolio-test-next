@@ -25,12 +25,12 @@ const ProjectCard = ({ project }: { project: Project }) => {
 export default ProjectCard;
 
 const colors = [
-  "bg-blue-400",
-  "bg-purple-400",
-  "bg-green-400",
-  "bg-orange-400",
-  "bg-yellow-500",
-  "bg-red-400",
+  "bg-blue-400 hover:bg-blue-500",
+  "bg-purple-400 hover:bg-purple-500",
+  "bg-green-400 hover:bg-green-500",
+  "bg-orange-400 hover:bg-orange-500",
+  "bg-yellow-500 hover:bg-yellow-600",
+  "bg-red-400 hover:bg-red-500",
 ];
 
 const randomColor = () => colors[Math.floor(Math.random() * colors.length)];

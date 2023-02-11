@@ -8,5 +8,12 @@ type Class = {
     thumbnail?: string;
   }
 
+  type Game = {
+    name: string;
+    url: string;
+    description: string;
+    color?: string;
+  };
 
-  export type { Class}
+
+  export type { Class, Game }
