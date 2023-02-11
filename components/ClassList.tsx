@@ -44,7 +44,7 @@ const ClassCard = ({ cls }: { cls: Class }) => {
   const color = randomColor();
 
   return (
-    <Link href={`/classes/${cls.url}`} className={`${color.bg} relative z-0 rounded-lg overflow-hidden`}>
+    <Link href={`/classes/${cls.url}`} className={`${color.bg} relative z-0 rounded-lg overflow-hidden snap-start`}>
       {cls.thumbnail && (
         <img
           src={cls.thumbnail}
