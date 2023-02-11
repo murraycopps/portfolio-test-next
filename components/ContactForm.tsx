@@ -1,7 +1,6 @@
 import axios from 'axios';
-import { FC } from 'react'
 
-const ContactForm: FC = () => {
+const ContactForm= () => {
     const handleSubmit = (event: any) => {
         event.preventDefault();
         const formData = new FormData(event.target);

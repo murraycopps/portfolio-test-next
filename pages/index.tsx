@@ -19,7 +19,7 @@ const iconsUsed = [
 
 export default function Home(props: { host: string; classes: Class[] }) {
   return (
-    <PageWrapper title="Copps Portfolio" iconsUsed={iconsUsed} snap={true}>
+    <PageWrapper title="Copps Portfolio" iconsUsed={iconsUsed}>
       <header className="py-8 mt-8 mb-16 snap-start">
         <h1 className="text-4xl font-bold leading-tight text-center text-gray-300">
           My Coding and Engineering Portfolio
