@@ -1,6 +1,7 @@
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import NodeCache from "node-cache";
@@ -41,7 +42,7 @@ const TextWithLinks = ({ text }: { text: string }) => {
   }
 
   return (
-    <p className="text-gray-700 mt-4 whitespace-pre-wrap">
+    <p className="mt-4 text-gray-700 whitespace-pre-wrap">
       {elements.map((element, index) => (
         <React.Fragment key={index}>{element}</React.Fragment>
       ))}
@@ -75,11 +76,11 @@ export default function ClassPage({ class: currentClass }: Props) {
 
   if (!thisClass) {
     return (
-      <div className="bg-red-500 p-4 text-white text-2xl font-bold">
+      <div className="p-4 text-2xl font-bold text-white bg-red-500">
         <Head>
           <title>Class not Found</title>
         </Head>
-        <Link href="/" className="text-blue-500 font-bold mx-4">
+        <Link href="/" className="mx-4 font-bold text-blue-500">
           &larr; Back
         </Link>
         Error: Class not found
@@ -88,19 +89,19 @@ export default function ClassPage({ class: currentClass }: Props) {
   }
   return (
     <PageWrapper title={thisClass.name}>
-      <div className="bg-gray-200 p-4 rounded-lg snap-start">
+      <div className="p-4 bg-gray-200 rounded-lg snap-start">
         <h1 className="text-2xl font-bold text-gray-700">{thisClass.name}</h1>
         <TextWithLinks text={thisClass.description} />
         {thisClass.images.length > 0 && (
           <div>
-            <h2 className="text-xl font-bold text-gray-700 mt-4">Images</h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
+            <h2 className="mt-4 text-xl font-bold text-gray-700">Images</h2>
+            <div className="grid grid-cols-1 gap-4 mt-4 lg:grid-cols-2">
               {thisClass.images.map((image, index) => (
-                <img
+                <Image
                   key={index.toString()}
                   src={image}
                   alt={thisClass.name}
-                  className="w-full rounded-lg max-h-96 h-full object-cover snap-start"
+                  className="object-cover w-full h-full rounded-lg max-h-96 snap-start"
                 />
               ))}
             </div>
@@ -108,13 +109,13 @@ export default function ClassPage({ class: currentClass }: Props) {
         )}
         {thisClass.videos.length > 0 && (
           <div>
-            <h2 className="text-xl font-bold text-gray-700 mt-4">Videos</h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 my-4">
+            <h2 className="mt-4 text-xl font-bold text-gray-700">Videos</h2>
+            <div className="grid grid-cols-1 gap-4 my-4 lg:grid-cols-2">
               {thisClass.videos.map((video, index) => (
                 <video
                   key={index.toString()}
                   src={video}
-                  className="w-full rounded-lg max-h-96 h-full object-cover snap-start"
+                  className="object-cover w-full h-full rounded-lg max-h-96 snap-start"
                   controls
                 />
               ))}
@@ -123,7 +124,7 @@ export default function ClassPage({ class: currentClass }: Props) {
         )}
       </div>
       {/* <button
-        className="fixed bottom-18 right-4 bg-white rounded-full p-4"
+        className="fixed p-4 bg-white rounded-full bottom-18 right-4"
         onClick={() => {
           router.back();
         }}

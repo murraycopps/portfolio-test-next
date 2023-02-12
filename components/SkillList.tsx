@@ -1,6 +1,7 @@
 import { faHtml5, faCss3Alt, faReact, faJs, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRef, useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function Skills() {
     const containerRef = useRef<HTMLUListElement>(null);
@@ -161,10 +162,12 @@ export default function Skills() {
           onMouseLeave={() => setVisible(false)}
           >
             <div className="w-full h-full p-3 rounded-full rotate-center bg-inherit">
-              <img
+              <Image
                 src="/icons/typescript-icon.svg"
                 className="w-10 h-10"
                 alt="tsIcon"
+                width={40}
+                height={40}
               />
               <span className="absolute left-0 z-10 w-full px-1 py-1 mt-2 font-semibold text-center text-white bg-blue-500 rounded-b-lg text-2xs top-full">
                 TypeScript
@@ -180,10 +183,12 @@ export default function Skills() {
             onMouseLeave={() => setVisible(false)}
           >
             <div className="w-full h-full rounded-full rotate-center bg-inherit">
-              <img
+              <Image
                 src="/icons/next-js.svg"
                 className="left-0 w-16 h-16 object-fit-cover next-icon"
                 alt="tsIcon"
+                width={40}
+                height={40}
               />
               <span className="absolute left-0 z-10 w-full px-2 py-1 mt-2 text-xs font-semibold text-center text-gray-800 bg-white rounded-b-lg top-full">
                 Next.js

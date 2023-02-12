@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import PageWrapper from "../components/PageWrapper";
+import Image from "next/image";
 
 const BalsaCrane: React.FC = () => {
   const router = useRouter();
@@ -23,23 +24,29 @@ const BalsaCrane: React.FC = () => {
         load more effectively
       </p>
       <div className="grid grid-cols-1 gap-4 mt-6 lg:grid-cols-2">
-        <img
+        <Image
           src="/images/crane-front.jpeg"
           alt="Balsa crane in action"
           className="object-cover w-full h-64 rounded-lg sm:h-96"
+          width={500}
+          height={500}
         />
-        <img
+        <Image
           src="/images/crane-side.jpeg"
           alt="Balsa crane design"
           className="object-cover w-full h-64 rounded-lg sm:h-96"
+          width={500}
+          height={500}
         />
       </div>
       <div className="grid grid-cols-1 grid-rows-2 gap-4 mt-4 lg:grid-rows-1 lg:grid-cols-2">
         <Link href="/files/crane-drawing.pdf" target="_blank">
-          <img
+          <Image
             src="/images/crane-drawing-image.png"
             alt="Balsa crane in action"
-            className="object-cover w-full mx-auto rounded-lg  lg:w-auto"
+            className="object-cover w-full mx-auto rounded-lg lg:w-auto"
+            width={500}
+            height={500}
           />
         </Link>
         <video controls className="object-cover w-full h-full rounded-lg">

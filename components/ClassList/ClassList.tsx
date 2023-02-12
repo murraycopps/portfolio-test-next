@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Class } from "../../scripts/types";
+import Image from "next/image";
 
 const ClassCard = ({ cls }: { cls: Class }) => {
   const [color, setColor] = useState<Color>();
@@ -15,15 +16,17 @@ const ClassCard = ({ cls }: { cls: Class }) => {
       className={`${color?.bg} relative z-0 rounded-lg overflow-hidden snap-start`}
     >
       {cls.thumbnail && (
-        <img
+        <Image
           src={cls.thumbnail}
           alt=""
           className={`object-cover w-full h-full -z-10 absolute ${
             (cls.thumbnail && color?.opacity) || "opacity-25"
           }`}
+          width={500}
+          height={500}
         />
       )}
-      <div className="text-2xl text-white w-full h-16 flex items-center justify-center">
+      <div className="flex items-center justify-center w-full h-16 text-2xl text-white">
         {cls.name}
       </div>
     </Link>
