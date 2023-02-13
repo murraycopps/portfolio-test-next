@@ -8,7 +8,7 @@ const ClassCard = ({ cls }: { cls: Class }) => {
 
   useEffect(() =>{
     setColor(randomColor())
-  })
+  },[])
 
   return (
     <Link
